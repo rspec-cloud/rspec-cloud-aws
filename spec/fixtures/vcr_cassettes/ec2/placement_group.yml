@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribePlacementGroups&Filter.1.Name=group-name&Filter.1.Value.1=test&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151206T122239Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151206/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 06 Dec 2015 12:22:40 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribePlacementGroupsResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>1fcacb60-3513-48c3-8455-fa8bbdc12393</requestId>
+            <placementGroupSet>
+                <item>
+                    <groupName>test</groupName>
+                    <strategy>cluster</strategy>
+                    <state>available</state>
+                </item>
+            </placementGroupSet>
+        </DescribePlacementGroupsResponse>
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 12:22:40 GMT
+recorded_with: VCR 3.0.0

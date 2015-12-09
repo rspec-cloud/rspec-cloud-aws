@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeNetworkAcls&Filter.1.Name=tag%3AName&Filter.1.Value.1=test&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151205T134640Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151205/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 05 Dec 2015 13:46:40 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeNetworkAclsResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>11960d21-7374-4b5a-9592-797ff6afee47</requestId>
+            <networkAclSet>
+                <item>
+                    <networkAclId>acl-cc0897a5</networkAclId>
+                    <vpcId>vpc-037ee96a</vpcId>
+                    <default>true</default>
+                    <entrySet>
+                        <item>
+                            <ruleNumber>100</ruleNumber>
+                            <protocol>-1</protocol>
+                            <ruleAction>allow</ruleAction>
+                            <egress>true</egress>
+                            <cidrBlock>0.0.0.0/0</cidrBlock>
+                        </item>
+                        <item>
+                            <ruleNumber>32767</ruleNumber>
+                            <protocol>-1</protocol>
+                            <ruleAction>deny</ruleAction>
+                            <egress>true</egress>
+                            <cidrBlock>0.0.0.0/0</cidrBlock>
+                        </item>
+                        <item>
+                            <ruleNumber>100</ruleNumber>
+                            <protocol>-1</protocol>
+                            <ruleAction>allow</ruleAction>
+                            <egress>false</egress>
+                            <cidrBlock>0.0.0.0/0</cidrBlock>
+                        </item>
+                        <item>
+                            <ruleNumber>32767</ruleNumber>
+                            <protocol>-1</protocol>
+                            <ruleAction>deny</ruleAction>
+                            <egress>false</egress>
+                            <cidrBlock>0.0.0.0/0</cidrBlock>
+                        </item>
+                    </entrySet>
+                    <associationSet>
+                        <item>
+                            <networkAclAssociationId>aclassoc-8eb4ace7</networkAclAssociationId>
+                            <networkAclId>acl-cc0897a5</networkAclId>
+                            <subnetId>subnet-2fe88946</subnetId>
+                        </item>
+                        <item>
+                            <networkAclAssociationId>aclassoc-7fb5ad16</networkAclAssociationId>
+                            <networkAclId>acl-cc0897a5</networkAclId>
+                            <subnetId>subnet-32e8895b</subnetId>
+                        </item>
+                    </associationSet>
+                    <tagSet>
+                        <item>
+                            <resourceId>acl-cc0897a5</resourceId>
+                            <resourceType>network-acl</resourceType>
+                            <key>Name</key>
+                            <value>test</value>
+                        </item>
+                    </tagSet>
+                </item>
+            </networkAclSet>
+        </DescribeNetworkAclsResponse>
+    http_version: 
+  recorded_at: Sat, 05 Dec 2015 13:46:40 GMT
+recorded_with: VCR 3.0.0

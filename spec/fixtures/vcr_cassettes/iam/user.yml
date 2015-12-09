@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://iam.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=GetUser&UserName=test&Version=2010-05-08
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151204T194536Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151204/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Amzn-Requestid:
+      - 96510045-9abf-11e5-99a7-3bf4ef4f1016
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '457'
+      Date:
+      - Fri, 04 Dec 2015 19:45:35 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <GetUserResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+          <GetUserResult>
+            <User>
+              <Path>/</Path>
+              <UserName>test</UserName>
+              <Arn>arn:aws:iam::123456789012:user/test</Arn>
+              <UserId>XXXXXXXXXXXXXXXXXXXXX</UserId>
+              <CreateDate>2015-12-04T19:36:04Z</CreateDate>
+            </User>
+          </GetUserResult>
+          <ResponseMetadata>
+            <RequestId>96510045-9abf-11e5-99a7-3bf4ef4f1016</RequestId>
+          </ResponseMetadata>
+        </GetUserResponse>
+    http_version:
+  recorded_at: Fri, 04 Dec 2015 19:45:36 GMT
+recorded_with: VCR 3.0.0

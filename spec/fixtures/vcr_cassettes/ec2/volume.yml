@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeVolumes&Filter.1.Name=tag%3AName&Filter.1.Value.1=test&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151206T125657Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151206/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 06 Dec 2015 12:56:57 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeVolumesResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>618b50cf-a4a7-4afe-9aa5-9e98f1b4cd12</requestId>
+            <volumeSet>
+                <item>
+                    <volumeId>vol-d1c58208</volumeId>
+                    <size>1</size>
+                    <snapshotId/>
+                    <availabilityZone>eu-central-1a</availabilityZone>
+                    <status>available</status>
+                    <createTime>2015-12-06T12:55:55.000Z</createTime>
+                    <attachmentSet/>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>test</value>
+                        </item>
+                    </tagSet>
+                    <volumeType>gp2</volumeType>
+                    <iops>3</iops>
+                    <encrypted>false</encrypted>
+                </item>
+            </volumeSet>
+        </DescribeVolumesResponse>
+    http_version:
+  recorded_at: Sun, 06 Dec 2015 12:56:57 GMT
+recorded_with: VCR 3.0.0

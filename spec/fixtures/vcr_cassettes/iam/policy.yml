@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://iam.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=GetPolicy&PolicyArn=arn%3Aaws%3Aiam%3A%3A247761745453%3Apolicy%2Ftest&Version=2010-05-08
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151206T201347Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAIRSRRHGAV3UDHY6A/20151206/us-east-1/iam/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=54203f729db645d4c22f2d2e762c1796da5e34bb966676586462a984e9780ae0
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Amzn-Requestid:
+      - dc5aa7a9-9c55-11e5-86b3-9fd0f3cb5c3e
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '710'
+      Date:
+      - Sun, 06 Dec 2015 20:13:48 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <GetPolicyResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+          <GetPolicyResult>
+            <Policy>
+              <Path>/</Path>
+              <UpdateDate>2015-11-15T10:14:12Z</UpdateDate>
+              <PolicyId>ANPAIQ72TMH3OCM3DBZTG</PolicyId>
+              <DefaultVersionId>v1</DefaultVersionId>
+              <PolicyName>test</PolicyName>
+              <IsAttachable>true</IsAttachable>
+              <Description>test description</Description>
+              <AttachmentCount>1</AttachmentCount>
+              <Arn>arn:aws:iam::247761745453:policy/test</Arn>
+              <CreateDate>2015-11-15T10:14:12Z</CreateDate>
+            </Policy>
+          </GetPolicyResult>
+          <ResponseMetadata>
+            <RequestId>dc5aa7a9-9c55-11e5-86b3-9fd0f3cb5c3e</RequestId>
+          </ResponseMetadata>
+        </GetPolicyResponse>
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 20:13:48 GMT
+recorded_with: VCR 3.0.0

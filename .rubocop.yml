@@ -1,0 +1,15 @@
+AllCops:
+  Include:
+    - Gemfile
+    - Rakefile
+    - Thorfile
+    - Guardfile
+    - rspec-cloud-aws.gemspec
+LineLength:
+  Enabled: false
+Documentation:
+  Enabled: false
+Style/PredicateName:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false

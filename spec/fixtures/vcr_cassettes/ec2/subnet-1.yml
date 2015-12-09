@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeSubnets&Filter.1.Name=tag%3AName&Filter.1.Value.1=test-1&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151205T143619Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151205/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 05 Dec 2015 14:36:18 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeSubnetsResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>d9c04970-967d-4b8b-9185-f7238fa87b36</requestId>
+            <subnetSet>
+                <item>
+                    <subnetId>subnet-2fe88946</subnetId>
+                    <state>available</state>
+                    <vpcId>vpc-037ee96a</vpcId>
+                    <cidrBlock>192.168.0.0/25</cidrBlock>
+                    <availableIpAddressCount>123</availableIpAddressCount>
+                    <availabilityZone>eu-central-1a</availabilityZone>
+                    <defaultForAz>false</defaultForAz>
+                    <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>test-1</value>
+                        </item>
+                    </tagSet>
+                </item>
+            </subnetSet>
+        </DescribeSubnetsResponse>
+    http_version: 
+  recorded_at: Sat, 05 Dec 2015 14:36:19 GMT
+recorded_with: VCR 3.0.0

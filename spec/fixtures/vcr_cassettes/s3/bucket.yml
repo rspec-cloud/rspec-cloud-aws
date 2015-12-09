@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tarak.s3-eu-central-1.amazonaws.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      X-Amz-Date:
+      - 20151206T184324Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151204/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Amz-Id-2:
+      - Mcq6BMIoVotUgiJwBZ9GL9wWqzk/1H5nbEfZ7jfeJsULbXhI+EnJKx7p9I0r4gpp7lMSku/mK8s=
+      X-Amz-Request-Id:
+      - 4ECA94DC8009D830
+      Date:
+      - Sun, 06 Dec 2015 18:43:24 GMT
+      X-Amz-Bucket-Region:
+      - eu-central-1
+      Content-Type:
+      - application/xml
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>tarak</Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><IsTruncated>false</IsTruncated><Contents><Key>test/</Key><LastModified>2015-12-06T18:21:09.000Z</LastModified><ETag>&quot;d41d8cd98f00b204e9800998ecf8427e&quot;</ETag><Size>0</Size><Owner><ID>c1015bae42b7d4ae8b2d5cd2766a373e6c6f1de4e09481b252dac8dd18a56f36</ID></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>test/test.txt</Key><LastModified>2015-12-06T18:22:13.000Z</LastModified><ETag>&quot;d8e8fca2dc0f896fd7cb4cb0031ba249&quot;</ETag><Size>5</Size><Owner><ID>c1015bae42b7d4ae8b2d5cd2766a373e6c6f1de4e09481b252dac8dd18a56f36</ID></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>
+    http_version:
+  recorded_at: Sun, 06 Dec 2015 18:43:24 GMT
+recorded_with: VCR 3.0.0

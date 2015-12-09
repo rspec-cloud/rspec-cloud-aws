@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://iam.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=GetRole&RoleName=test&Version=2010-05-08
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151206T202356Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAIRSRRHGAV3UDHY6A/20151206/us-east-1/iam/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=afaf219e3fd613e2a471461458c03093464abf9cc6e0cb47e4820c172805c301
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Amzn-Requestid:
+      - 473f8123-9c57-11e5-97aa-4bafd5ad3851
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '720'
+      Date:
+      - Sun, 06 Dec 2015 20:23:56 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <GetRoleResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+          <GetRoleResult>
+            <Role>
+              <Path>/</Path>
+              <AssumeRolePolicyDocument>%7B%22Version%22%3A%222012-10-17%22%2C%22Statement%22%3A%5B%7B%22Effect%22%3A%22Allow%22%2C%22Principal%22%3A%7B%22Service%22%3A%22ec2.amazonaws.com%22%7D%2C%22Action%22%3A%22sts%3AAssumeRole%22%7D%5D%7D</AssumeRolePolicyDocument>
+              <RoleId>AROAI3XXSN2SFO3ZZ4B7U</RoleId>
+              <RoleName>test</RoleName>
+              <Arn>arn:aws:iam::247761745453:role/test</Arn>
+              <CreateDate>2015-12-04T19:33:32Z</CreateDate>
+            </Role>
+          </GetRoleResult>
+          <ResponseMetadata>
+            <RequestId>473f8123-9c57-11e5-97aa-4bafd5ad3851</RequestId>
+          </ResponseMetadata>
+        </GetRoleResponse>
+    http_version: 
+  recorded_at: Sun, 06 Dec 2015 20:23:57 GMT
+recorded_with: VCR 3.0.0

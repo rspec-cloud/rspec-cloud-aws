@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeRouteTables&Filter.1.Name=tag%3AName&Filter.1.Value.1=test&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151205T140502Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151205/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 05 Dec 2015 14:05:02 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeRouteTablesResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>2ee4e251-77ac-4dc4-ba6d-3fbe5ef088b0</requestId>
+            <routeTableSet>
+                <item>
+                    <routeTableId>rtb-81f76ee8</routeTableId>
+                    <vpcId>vpc-037ee96a</vpcId>
+                    <routeSet>
+                        <item>
+                            <destinationCidrBlock>192.168.0.0/24</destinationCidrBlock>
+                            <gatewayId>local</gatewayId>
+                            <state>active</state>
+                            <origin>CreateRouteTable</origin>
+                        </item>
+                        <item>
+                            <destinationCidrBlock>0.0.0.0/0</destinationCidrBlock>
+                            <gatewayId>igw-7702a21e</gatewayId>
+                            <state>active</state>
+                            <origin>CreateRoute</origin>
+                        </item>
+                    </routeSet>
+                    <associationSet>
+                        <item>
+                            <routeTableAssociationId>rtbassoc-615f3e08</routeTableAssociationId>
+                            <routeTableId>rtb-81f76ee8</routeTableId>
+                            <subnetId>subnet-32e8895b</subnetId>
+                            <main>false</main>
+                        </item>
+                        <item>
+                            <routeTableAssociationId>rtbassoc-6e5f3e07</routeTableAssociationId>
+                            <routeTableId>rtb-81f76ee8</routeTableId>
+                            <subnetId>subnet-2fe88946</subnetId>
+                            <main>false</main>
+                        </item>
+                        <item>
+                            <routeTableAssociationId>rtbassoc-8e5b3ae7</routeTableAssociationId>
+                            <routeTableId>rtb-81f76ee8</routeTableId>
+                            <main>true</main>
+                        </item>
+                    </associationSet>
+                    <propagatingVgwSet/>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>test</value>
+                        </item>
+                    </tagSet>
+                </item>
+            </routeTableSet>
+        </DescribeRouteTablesResponse>
+    http_version: 
+  recorded_at: Sat, 05 Dec 2015 14:05:03 GMT
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeRouteTables&Filter.1.Name=tag%3AName&Filter.1.Value.1=test&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151205T140503Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151205/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 05 Dec 2015 14:05:02 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeRouteTablesResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>5cef102e-8e7b-4677-84b3-a1ed7b289754</requestId>
+            <routeTableSet>
+                <item>
+                    <routeTableId>rtb-81f76ee8</routeTableId>
+                    <vpcId>vpc-037ee96a</vpcId>
+                    <routeSet>
+                        <item>
+                            <destinationCidrBlock>192.168.0.0/24</destinationCidrBlock>
+                            <gatewayId>local</gatewayId>
+                            <state>active</state>
+                            <origin>CreateRouteTable</origin>
+                        </item>
+                        <item>
+                            <destinationCidrBlock>0.0.0.0/0</destinationCidrBlock>
+                            <gatewayId>igw-7702a21e</gatewayId>
+                            <state>active</state>
+                            <origin>CreateRoute</origin>
+                        </item>
+                    </routeSet>
+                    <associationSet>
+                        <item>
+                            <routeTableAssociationId>rtbassoc-615f3e08</routeTableAssociationId>
+                            <routeTableId>rtb-81f76ee8</routeTableId>
+                            <subnetId>subnet-32e8895b</subnetId>
+                            <main>false</main>
+                        </item>
+                        <item>
+                            <routeTableAssociationId>rtbassoc-6e5f3e07</routeTableAssociationId>
+                            <routeTableId>rtb-81f76ee8</routeTableId>
+                            <subnetId>subnet-2fe88946</subnetId>
+                            <main>false</main>
+                        </item>
+                        <item>
+                            <routeTableAssociationId>rtbassoc-8e5b3ae7</routeTableAssociationId>
+                            <routeTableId>rtb-81f76ee8</routeTableId>
+                            <main>true</main>
+                        </item>
+                    </associationSet>
+                    <propagatingVgwSet/>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>test</value>
+                        </item>
+                    </tagSet>
+                </item>
+            </routeTableSet>
+        </DescribeRouteTablesResponse>
+    http_version: 
+  recorded_at: Sat, 05 Dec 2015 14:05:03 GMT
+recorded_with: VCR 3.0.0

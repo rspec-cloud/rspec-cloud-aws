@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://iam.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=GetGroup&GroupName=test&Version=2010-05-08
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151205T124739Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151205/us-east-1/iam/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Amzn-Requestid:
+      - 5d00678a-9b4e-11e5-827c-27430a8daee9
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '774'
+      Date:
+      - Sat, 05 Dec 2015 12:47:37 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <GetGroupResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">
+          <GetGroupResult>
+            <IsTruncated>false</IsTruncated>
+            <Users>
+              <member>
+                <Path>/</Path>
+                <UserName>test</UserName>
+                <Arn>arn:aws:iam::123456789012:user/test</Arn>
+                <UserId>XXXXXXXXXXXXXXXXXXXXX</UserId>
+                <CreateDate>2015-12-04T19:36:04Z</CreateDate>
+              </member>
+            </Users>
+            <Group>
+              <Path>/</Path>
+              <GroupName>test</GroupName>
+              <Arn>arn:aws:iam::123456789012:group/test</Arn>
+              <GroupId>XXXXXXXXXXXXXXXXXXXXX</GroupId>
+              <CreateDate>2015-11-15T10:08:05Z</CreateDate>
+            </Group>
+          </GetGroupResult>
+          <ResponseMetadata>
+            <RequestId>5d00678a-9b4e-11e5-827c-27430a8daee9</RequestId>
+          </ResponseMetadata>
+        </GetGroupResponse>
+    http_version:
+  recorded_at: Sat, 05 Dec 2015 12:47:39 GMT
+recorded_with: VCR 3.0.0

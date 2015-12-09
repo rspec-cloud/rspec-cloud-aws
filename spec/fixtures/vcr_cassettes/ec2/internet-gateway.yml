@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeInternetGateways&Filter.1.Name=tag%3AName&Filter.1.Value.1=test&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151205T131644Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151204/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 05 Dec 2015 13:16:43 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeInternetGatewaysResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>2bb78509-fdd4-4785-b4b4-9e710df58ca1</requestId>
+            <internetGatewaySet>
+                <item>
+                    <internetGatewayId>igw-7702a21e</internetGatewayId>
+                    <attachmentSet>
+                        <item>
+                            <vpcId>vpc-037ee96a</vpcId>
+                            <state>available</state>
+                        </item>
+                    </attachmentSet>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>test</value>
+                        </item>
+                    </tagSet>
+                </item>
+            </internetGatewaySet>
+        </DescribeInternetGatewaysResponse>
+    http_version:
+  recorded_at: Sat, 05 Dec 2015 13:16:44 GMT
+recorded_with: VCR 3.0.0

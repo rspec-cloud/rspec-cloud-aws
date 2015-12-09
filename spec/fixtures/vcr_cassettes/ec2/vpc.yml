@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ec2.eu-central-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeVpcs&Filter.1.Name=tag%3AName&Filter.1.Value.1=test&Version=2014-10-01
+    headers:
+      User-Agent:
+      - fog/1.36.0 fog-core/1.35.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amz-Date:
+      - 20151205T145824Z
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=12345678901234567890/20151205/eu-central-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-date, Signature=NeeJ2hahzoo1aor7nooj5aathailu5kooh5toobae3Yae2OhquiecheK1raiyah5
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 05 Dec 2015 14:58:23 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeVpcsResponse xmlns="http://ec2.amazonaws.com/doc/2014-10-01/">
+            <requestId>69fc9937-405e-4bba-be4a-24e6bbf8c75a</requestId>
+            <vpcSet>
+                <item>
+                    <vpcId>vpc-037ee96a</vpcId>
+                    <state>available</state>
+                    <cidrBlock>192.168.0.0/24</cidrBlock>
+                    <dhcpOptionsId>dopt-b66da9df</dhcpOptionsId>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>test</value>
+                        </item>
+                    </tagSet>
+                    <instanceTenancy>default</instanceTenancy>
+                    <isDefault>false</isDefault>
+                </item>
+            </vpcSet>
+        </DescribeVpcsResponse>
+    http_version:
+  recorded_at: Sat, 05 Dec 2015 14:58:24 GMT
+recorded_with: VCR 3.0.0
