@@ -1,12 +1,3 @@
-/.bundle/
-/.yardoc
-/Gemfile.lock
-/_yardoc/
-/coverage/
-/doc/
-/pkg/
-/spec/reports/
-/tmp/
-/examples/
-/bin/test*.rb
-.rspec
+.bundle
+
+spec/reports
